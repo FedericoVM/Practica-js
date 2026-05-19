@@ -10,6 +10,13 @@
 -------------------------------------------------------------------------- */
 function signoNumero(numero) {
   // TU CÓDIGO AQUÍ 👇
+  if (numero > 0) {
+    return "positivo";
+  } else if (numero < 0) {
+    return "negativo"
+  } else {
+    return "cero";
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -20,6 +27,11 @@ function signoNumero(numero) {
 -------------------------------------------------------------------------- */
 function esBisiesto(anio) {
   // TU CÓDIGO AQUÍ 👇
+  if ( anio % 4 === 0 && anio % 100 != 0 || (anio % 100 === 0) && (anio % 400 === 0) ) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -29,6 +41,11 @@ function esBisiesto(anio) {
 -------------------------------------------------------------------------- */
 function tipoDia(dia) {
   // TU CÓDIGO AQUÍ 👇
+  if (dia === "lunes" || dia === "martes" || dia === "miercoles" || dia === "jueves" || dia === "viernes" ) {
+    return "laborable";
+  } else if (dia === "sábado" || dia === "domingo") {
+    return "fin de semana";
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -40,6 +57,13 @@ function tipoDia(dia) {
 -------------------------------------------------------------------------- */
 function precioEntrada(edad) {
   // TU CÓDIGO AQUÍ 👇
+  if (edad < 12 && edad > 0 ) {
+    return 500;
+  } else if ( edad >= 12 && edad <= 64 ) {
+    return 1200;
+  } else {
+    return 700;
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -49,6 +73,11 @@ function precioEntrada(edad) {
 -------------------------------------------------------------------------- */
 function tieneContenido(texto) {
   // TU CÓDIGO AQUÍ 👇
+  if (texto.length != 0) {
+    return "Tiene contenido";
+  } else {
+    return "Vacío";
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -60,6 +89,15 @@ function tieneContenido(texto) {
 -------------------------------------------------------------------------- */
 function puedeConducir(edad, aproboTeorico) {
   // TU CÓDIGO AQUÍ 👇
+  if (edad > 18) {
+    if (aproboTeorico) {
+      return "Puede sacar el registro"
+    } else {
+      return "Sin teórico aprobado";
+    }
+  } else {
+    return "Menor de edad";
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -70,6 +108,39 @@ function puedeConducir(edad, aproboTeorico) {
 -------------------------------------------------------------------------- */
 function numeroDia(numero) {
   // TU CÓDIGO AQUÍ 👇
+  switch (numero) {
+    case 1:
+      return "lunes";
+      break;
+
+    case 2:
+      return "martes";
+      break;
+
+    case 3:
+      return "miércoles";  
+      break;
+
+    case 4:
+      return "jueves";
+      break;
+
+    case 5:
+      return "viernes";
+      break;
+
+    case 6:
+      return "sábado";
+      break;
+
+    case 7:
+      return "domingo";
+      break;        
+
+    default:
+      return "Día inválido";
+      break;
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -82,6 +153,16 @@ function numeroDia(numero) {
 -------------------------------------------------------------------------- */
 function clasificarIMC(peso, altura) {
   // TU CÓDIGO AQUÍ 👇
+  let IMC = peso / (altura * altura);
+  if (IMC < 18.5 && IMC > 0) {
+    return "Bajo peso";
+  } else if (IMC >= 18.5 && IMC <= 24.9) {
+    return "Normal";
+  } else if (IMC >= 25 && IMC <= 29.9) {
+    return "Sobrepeso"
+  } else {
+    return "Obesidad";
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -91,6 +172,11 @@ function clasificarIMC(peso, altura) {
 -------------------------------------------------------------------------- */
 function valorPorDefecto(nombreUsuario) {
   // TU CÓDIGO AQUÍ 👇
+  if(!nombreUsuario) {
+    return "Anónimo";
+  } else {
+    return nombreUsuario;
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -103,6 +189,15 @@ function valorPorDefecto(nombreUsuario) {
 -------------------------------------------------------------------------- */
 function calificarNota(nota) {
   // TU CÓDIGO AQUÍ 👇
+  if (nota >= 0 && nota <= 59) {
+    return "Reprobado";
+  } else if (nota >= 60 && nota <= 74) {
+    return "Aprobado";
+  } else if (nota >= 75 && nota <= 89) {
+    return "Notable";
+  } else if (nota >= 90 && nota <= 100) {
+    return "Sobresaliente";
+  }
 }
 
 // 🚨 ¡NO TOCAR ESTA LÍNEA!
