@@ -11,6 +11,12 @@
 -------------------------------------------------------------------------- */
 function numerosHastaN(n) {
   // TU CÓDIGO AQUÍ 👇
+  const array = [];
+  for (let i = 0; i < n; i++) {
+    array[i] = i + 1;
+  }
+
+  return array;
 }
 
 /* --------------------------------------------------------------------------
@@ -21,6 +27,12 @@ function numerosHastaN(n) {
 -------------------------------------------------------------------------- */
 function cuentaRegresiva(inicio) {
   // TU CÓDIGO AQUÍ 👇
+  const array = [];
+  for (let i = inicio; i >= 0; i--) {
+    array.push(i);
+  }
+  array.push("¡Despegue! 🚀");
+  return array;
 }
 
 /* --------------------------------------------------------------------------
@@ -30,6 +42,12 @@ function cuentaRegresiva(inicio) {
 -------------------------------------------------------------------------- */
 function tablaMultiplicar(numero) {
   // TU CÓDIGO AQUÍ 👇
+  const tablaMultip = [];
+  for (let i = 1; i <= 10; i++) {
+    tablaMultip.push(`${numero} x ${i} = ${numero * i}`);
+  }
+
+  return tablaMultip;
 }
 
 /* --------------------------------------------------------------------------
@@ -40,6 +58,22 @@ function tablaMultiplicar(numero) {
 -------------------------------------------------------------------------- */
 function factorial(n) {
   // TU CÓDIGO AQUÍ 👇
+
+  let resultado = 0;
+
+  if (n === 0) {
+    return 1;
+  }
+
+  for (let i = n; i > 0; i--) {
+    if (i === n) {
+      resultado = n;
+    } else {
+      resultado = resultado * i;
+    }
+  }
+
+  return resultado;
 }
 
 /* --------------------------------------------------------------------------
@@ -50,6 +84,14 @@ function factorial(n) {
 -------------------------------------------------------------------------- */
 function sinMultiplosDe4(limite) {
   // TU CÓDIGO AQUÍ 👇
+  const array = [];
+  for (let i = 1; i <= limite; i++) {
+    if (i % 4 != 0) {
+      array.push(i);
+    }
+  }
+
+  return array;
 }
 
 /* --------------------------------------------------------------------------
@@ -59,6 +101,11 @@ function sinMultiplosDe4(limite) {
 -------------------------------------------------------------------------- */
 function primerMultiploDe13MayorA100() {
   // TU CÓDIGO AQUÍ 👇
+  for (let i = 100; i >= 100; i++) {
+    if (i % 13 === 0) {
+      return i;
+    }
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -68,6 +115,18 @@ function primerMultiploDe13MayorA100() {
 -------------------------------------------------------------------------- */
 function triangulo(filas) {
   // TU CÓDIGO AQUÍ 👇
+  const array = [];
+
+  for (let i = 0; i < filas; i++) {
+    let ateriscos = "";
+
+    for (let j = 0; j <= i; j++) {
+      ateriscos += "*";
+    }
+    array.push(ateriscos);
+  }
+
+  return array;
 }
 
 /* --------------------------------------------------------------------------
@@ -77,6 +136,11 @@ function triangulo(filas) {
 -------------------------------------------------------------------------- */
 function sumaHastaN(n) {
   // TU CÓDIGO AQUÍ 👇
+  let acumulador = 0;
+  for (let i = 1; i <= n; i++) {
+    acumulador += i;
+  }
+  return acumulador;
 }
 
 /* --------------------------------------------------------------------------
@@ -87,6 +151,24 @@ function sumaHastaN(n) {
 -------------------------------------------------------------------------- */
 function fibonacci(n) {
   // TU CÓDIGO AQUÍ 👇
+  let listaNumeros = [];
+  let numAux = 0;
+  let numAuxDos = 0;
+
+  for (let i = 0; i < n; i++) {
+    if (i === 0 || i === 1) {
+      numAux = i;
+      listaNumeros.push(numAux);
+    } else {
+      if (i > 1) {
+        numAux = listaNumeros[i - 2];
+        numAuxDos = listaNumeros[i - 1];
+        listaNumeros.push(numAuxDos + numAux);
+      }
+    }
+  }
+
+  return listaNumeros;
 }
 
 /* --------------------------------------------------------------------------
@@ -97,6 +179,22 @@ function fibonacci(n) {
 -------------------------------------------------------------------------- */
 function esPrimo(numero) {
   // TU CÓDIGO AQUÍ 👇
+  let contadorDivisor = 0;
+  if (numero > 1) {
+    for (let i = 1; i <= numero; i++) {
+      if (numero % i === 0) {
+        contadorDivisor++;
+      }
+    }
+
+    if (contadorDivisor === 2) {
+      return true;
+    } else {
+      return false;
+    }
+  } else {
+    return false;
+  }
 }
 
 // 🚨 ¡NO TOCAR ESTA LÍNEA!
