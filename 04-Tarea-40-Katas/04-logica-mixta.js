@@ -19,6 +19,23 @@
 -------------------------------------------------------------------------- */
 function fizzBuzzExtendido(n) {
   // TU CÓDIGO AQUÍ 👇
+  if (n % 3 === 0 && n % 5 === 0 && n % 7 === 0) {
+    return "FizzBuzzBazz";
+  } else if (n % 5 === 0 && n % 7 === 0) {
+    return "BuzzBazz";
+  } else if (n % 3 === 0 && n % 7 === 0) {
+    return "FizzBazz";
+  } else if (n % 3 === 0 && n % 5 === 0) {
+    return "FizzBuzz";
+  } else if (n % 7 === 0) {
+    return "Bazz";
+  } else if (n % 5 === 0) {
+    return "Buzz";
+  } else if (n % 3 === 0) {
+    return "Fizz";
+  } else {
+    return String(n);
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -29,6 +46,16 @@ function fizzBuzzExtendido(n) {
 -------------------------------------------------------------------------- */
 function calcularTotal(precios) {
   // TU CÓDIGO AQUÍ 👇
+  let total = 0;
+  for (let i = 0; i < precios.length; i++) {
+    total += precios[i];
+  }
+
+  if (total > 5000) {
+    return (total = total - (15 * total) / 100);
+  } else {
+    return total;
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -39,6 +66,16 @@ function calcularTotal(precios) {
 -------------------------------------------------------------------------- */
 function contarParesEImpares(limite) {
   // TU CÓDIGO AQUÍ 👇
+  let resultado = { pares: 0, impares: 0 };
+
+  for (let i = 1; i <= limite; i++) {
+    if (i % 2 === 0) {
+      resultado.pares += 1;
+    } else {
+      resultado.impares += 1;
+    }
+  }
+  return resultado;
 }
 
 /* --------------------------------------------------------------------------
@@ -49,6 +86,13 @@ function contarParesEImpares(limite) {
 -------------------------------------------------------------------------- */
 function palabrasEnMayusculas(oracion) {
   // TU CÓDIGO AQUÍ 👇
+  let listaPalabras = oracion.split(" ");
+  let listaPalabrasMayuscula = [];
+  for (let i = 0; i < listaPalabras.length; i++) {
+    listaPalabrasMayuscula.push(listaPalabras[i].toUpperCase());
+  }
+
+  return listaPalabrasMayuscula;
 }
 
 /* --------------------------------------------------------------------------
@@ -60,6 +104,17 @@ function palabrasEnMayusculas(oracion) {
 -------------------------------------------------------------------------- */
 function clasificarNumero(numero) {
   // TU CÓDIGO AQUÍ 👇
+  let miObj = { esPar: false, mayorQueCinco: false };
+
+  if (numero > 5 && numero % 2 === 0) {
+    miObj.mayorQueCinco = true;
+    miObj.esPar = true;
+  } else if (numero < 5 && numero % 2 === 0) {
+    miObj.esPar = true;
+  } else if (numero > 5 && numero % 2 != 0) {
+    miObj.mayorQueCinco = true;
+  }
+  return miObj;
 }
 
 /* --------------------------------------------------------------------------
@@ -70,6 +125,13 @@ function clasificarNumero(numero) {
 -------------------------------------------------------------------------- */
 function divisiblesPor3NoNueve(limite) {
   // TU CÓDIGO AQUÍ 👇
+  let divisiblesPorTres = [];
+  for (let i = 0; i <= limite; i++) {
+    if (i % 3 === 0 && i % 9 != 0) {
+      divisiblesPorTres.push(i);
+    }
+  }
+  return divisiblesPorTres;
 }
 
 /* --------------------------------------------------------------------------
@@ -81,6 +143,11 @@ function divisiblesPor3NoNueve(limite) {
 -------------------------------------------------------------------------- */
 function convertirTemperatura(celsius) {
   // TU CÓDIGO AQUÍ 👇
+  let temperatura = {
+    fahrenheit: (celsius * 9) / 5 + 32,
+    kelvin: celsius + 273.15,
+  };
+  return temperatura;
 }
 
 /* --------------------------------------------------------------------------
@@ -91,6 +158,14 @@ function convertirTemperatura(celsius) {
 -------------------------------------------------------------------------- */
 function contarTiradas(tiradas) {
   // TU CÓDIGO AQUÍ 👇
+  let carasDado = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0 };
+
+  for (let i = 0; i < tiradas.length; i++) {
+    let numeroTirado = tiradas[i];
+    carasDado[numeroTirado]++;
+  }
+
+  return carasDado;
 }
 
 /* --------------------------------------------------------------------------
@@ -101,6 +176,15 @@ function contarTiradas(tiradas) {
 -------------------------------------------------------------------------- */
 function obtenerDivisores(numero) {
   // TU CÓDIGO AQUÍ 👇
+  const listaDivisores = [];
+
+  for (let index = 1; index <= numero; index++) {
+    if (numero % index === 0) {
+      listaDivisores.push(index);
+    }
+  }
+
+  return listaDivisores;
 }
 
 /* --------------------------------------------------------------------------
@@ -114,6 +198,18 @@ function obtenerDivisores(numero) {
 -------------------------------------------------------------------------- */
 function adivinarNumero(secreto, intentos) {
   // TU CÓDIGO AQUÍ 👇
+  let resultados = [];
+
+  for (let i = 0; i < intentos.length; i++) {
+    if (secreto > intentos[i]) {
+      resultados.push("Demasiado bajo");
+    } else if (secreto < intentos[i]) {
+      resultados.push("Demasiado alto");
+    } else {
+      resultados.push("¡Correcto!");
+    }
+  }
+  return resultados;
 }
 
 // 🚨 ¡NO TOCAR ESTA LÍNEA!
